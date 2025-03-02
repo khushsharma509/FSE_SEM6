@@ -7,6 +7,7 @@ const db = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
 const productRoutes = require("./routes/productRoutes");
 const orderRoutes = require("./routes/orderRoutes");
+const orderItemsRoutes = require("./routes/orderItemsRoutes");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -19,6 +20,8 @@ app.use(bodyParser.json());
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/orders", orderRoutes);
+app.use("/api/order-items", orderItemsRoutes);
+
 
 // Root Route
 app.get("/", (req, res) => {
